@@ -36,8 +36,9 @@ const {
     SERVER_ERROR_RUNNING,
 } = require('./utils/constants')
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 5000
 app.listen(PORT,(err)=>{
     let msg = err ? SERVER_ERROR_RUNNING : SERVER_SUCCESS_RUNNING
+    console.log('PORT : ',PORT);
     console.log(msg); 
 })

@@ -4,8 +4,6 @@ import {
     CUSTOMERS_GET_BY_PAGE_FAIL
 } from '../helpers/CustomerConstants'
 
-const uriInit = 'http://localhost:3000'
-
 export const getCustomer = async () => {
 
 }
@@ -17,7 +15,7 @@ export const getCustomersByPage = async (page,dispatch) => {
             costumers: [],
         }
     })
-    let report = await fetch(uriInit +`/api/customers/page/${page}`, {
+    let report = await fetch(`/api/customers/page/${page}`, {
         Method: 'GET',
         mode: 'cors'
     })
@@ -50,7 +48,7 @@ export const deleteCustomer = async (id,dispatch) => {
 
 export const updateCustomer = async (customer,dispatch) => {
     console.log('customer for update : ',customer);
-    await fetch(uriInit + `/api/customers/${customer._id}`,{
+    await fetch(`/api/customers/${customer._id}`,{
         method : 'PUT',
         mode: 'cors',
         headers: {
@@ -68,7 +66,7 @@ export const updateCustomer = async (customer,dispatch) => {
 }
 
 export const createCustomer = async (customer,dispatch) => {
-    await fetch(uriInit + `/api/customers`, {
+    await fetch( `/api/customers`, {
         method: 'POST',
         mode: 'cors',
         headers: {
